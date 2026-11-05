@@ -1,0 +1,96 @@
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+  }
+
+  .success-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .success-card {
+    background: white;
+    width: 400px;
+    padding: 45px 40px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: #e8f8ee;
+    color: #27ae60;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
+
+  .success-card h1 {
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .success-card p {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .username {
+    color: #667eea;
+    font-weight: bold;
+  }
+
+  .logout-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    opacity: 0.9;
+  }
+</style>
+
+
+<div class="success-container">
+
+  <div class="success-card">
+
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <h1>You have successfully logged in!</h1>
+
+    <p>
+      Welcome,
+      <span class="username">
+        <%= session[:user_id] %>
+      </span>!
+    </p>
+
+    <%= button_to "Logout",
+        logout_path,
+        method: :delete,
+        class: "logout-button" %>
+
+  </div>
+
+</div>
